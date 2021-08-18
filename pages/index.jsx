@@ -16,12 +16,16 @@ export default function Home() {
   return (
     <>
     <form onSubmit={handleSubmit(onSubmit)}>
-      
-      <input {...register("email", {required:true})} />
-      <input {...register("password", { required: true })} />
-
-      {errors.exampleRequired && <span>This field is required</span>}
-      <input type="submit" />
+      <div className="container">
+        <span>NickName</span>
+        <input className="row justify-content-center mb-3" {...register("nickname", {required:true})} />
+        <span>Email</span>
+        <input className="row justify-content-center mb-3" {...register("email", { required: true })} />
+        <span>Password</span>
+        <input className="row justify-content-center mb-3" {...register("password", { required: true })} />
+        {errors.exampleRequired && <span>This field is required</span>}
+        <button className="row justify-content-center mb-3" type="submit">Register</button>
+      </div>
     </form>
      
     </>
