@@ -20,15 +20,15 @@ export default function UsersInfo() {
   return (
     <>
       {users == null ? "Now Loading" : users.map((user) =>     
-        <div className="card">
-          <div className="card-body">
+        <div className="card m-3" style={{width: 320, height:160}}>
+          <div className="card-body" >
             <div className="container">
               <div className="row">
-                  <div className="col-1">
+                  <div className="col-4">
                     <Image src={user.avatar} width="64px" height="64px"/>
                   </div>
-                  <div className="col-2">
-                    <a href="#" className ="btn btn-primary d-flex justify-content-center a">SHOW DETAIL</a>
+                  <div className="col-8">
+                    <a href="#" className ="btn btn-primary d-flex justify-content-center align-items-center">SHOW DETAIL</a>
                   </div>
               </div>
               <div className="row">
