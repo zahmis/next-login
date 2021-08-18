@@ -1,11 +1,29 @@
 import React from "react";
+import { useForm } from "react-hook-form";
+import {useRouter} from "next/router"
+import usersSample from "../public/users"
 
 export default function AfterRegister() {
+  const router = useRouter()
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const onSubmit = data => { 
+    // if(.match() )
+    console.log(usersSample)
+    // router.push('/usersInfo') 
+  };
+
   return (
     <>
-    <div>
-    登録に成功しました
-    </div>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div className="container">
+        <span>mail</span>
+        <input className="row justify-content-center mb-3" {...register("email", { required: true })} />
+        <span>Password</span>
+        <input className="row justify-content-center mb-3" {...register("password", { required: true })} />
+        <button className="row justify-content-center mb-3" type="submit">Login</button>
+        {errors.exampleRequired && <span>This field is required</span>}
+      </div>
+    </form>
     </>
   )
 }
