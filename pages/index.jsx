@@ -1,18 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import {useRouter} from "next/router"
 
 export default function Home() {
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  const onSubmit = data => {
-    console.log(data)
-    const xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://reqres.in/api/users?page=2", true);
-    xhr.onload = function(){
-    console.log(xhr.responseText);
-    
-    };
-    xhr.send();
-  };
+  const router = useRouter()
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const onSubmit = data => { router.push('/afterRegister') };
 
   return (
     <>
@@ -24,8 +17,8 @@ export default function Home() {
         <input className="row justify-content-center mb-3" {...register("email", { required: true })} />
         <span>Password</span>
         <input className="row justify-content-center mb-3" {...register("password", { required: true })} />
-        {errors.exampleRequired && <span>This field is required</span>}
         <button className="row justify-content-center mb-3" type="submit">Register</button>
+        {errors.exampleRequired && <span>This field is required</span>}
       </div>
     </form>
     </>
