@@ -6,7 +6,7 @@ export default function Home() {
   const onSubmit = data => {
     console.log(data)
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://reqres.in/api/products/3", true);
+    xhr.open("GET", "https://reqres.in/api/users?page=2", true);
     xhr.onload = function(){
         console.log(xhr.responseText);
     };
@@ -16,14 +16,14 @@ export default function Home() {
   return (
     <>
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input defaultValue="test" {...register("example")} />
       
-      <input {...register("exampleRequired", { required: true })} />
+      <input {...register("email", {required:true})} />
+      <input {...register("password", { required: true })} />
+
       {errors.exampleRequired && <span>This field is required</span>}
-      
       <input type="submit" />
     </form>
-    
+     
     </>
     // <div className={styles.container}>
     //   <Head>
