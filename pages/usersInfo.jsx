@@ -19,12 +19,17 @@ export default function UsersInfo() {
 
   return (
     <>
-      <div>Users</div>
       {users == null ? "Now Loading" : users.map((user) =>     
-      <div>
-          <Image src={user.avatar} width="64px" height="64px"/>
-        <div>
-          name {user.first_name}{user.last_name} 
+      <div className="container">
+        <div class="row card">
+          <div class="card-body">
+            <div>
+              <Image src={user.avatar} width="64px" height="64px"/>
+              <a href="#" class="btn btn-primary">Show Detail</a>
+              name {user.first_name}{user.last_name} 
+              email {user.email}
+            </div>
+          </div>
         </div>
       </div>   
      
