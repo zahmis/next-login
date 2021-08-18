@@ -1,5 +1,5 @@
 export default function Error() {
     return(
-        <div>Not user</div>
+        <div >ログインに失敗しました</div>
     )
 }
