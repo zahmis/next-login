@@ -22,7 +22,7 @@ export default function UsersInfo() {
       <div>Users</div>
       {users == null ? "Now Loading" : users.map((user) =>     
       <div>
-          <Image src={user.avatar} width="50px" height="50px"/>
+          <Image src={user.avatar} width="64px" height="64px"/>
         <div>
           name {user.first_name}{user.last_name} 
         </div>
