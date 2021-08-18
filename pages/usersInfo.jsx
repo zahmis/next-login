@@ -12,7 +12,6 @@ export default function UsersInfo() {
             setUsers(fetchUserDataFromReqRes.data)
         };
         xhr.send();
-        return
     }
     useEffect(async()=>{
         await getUsersInfo()
