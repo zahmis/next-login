@@ -42,7 +42,7 @@ const ModalShown = () => {
       <>
         <button onClick={openModal}>Open Modal</button>
         <Modal
-          isOpen={props.modalIsOpen}
+          isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
           onRequestClose={closeModal}
           style={customStyles}
