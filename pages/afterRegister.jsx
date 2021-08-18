@@ -1,14 +1,22 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import {useRouter} from "next/router"
-import usersSample from "../public/users"
+import usersSample from "../public/usersSample"
 
 export default function AfterRegister() {
   const router = useRouter()
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = data => { 
-    // if(.match() )
-    console.log(usersSample)
+    const userEmail = usersSample.find(elem => elem.email === data.email)
+    
+    if(userEmail == null){
+      console.log('葉末w')
+      router.push('/error')
+      return
+    }
+    
+    // if(data.email.match() )
+    console.log(data)
     // router.push('/usersInfo') 
   };
 
